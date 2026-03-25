@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="contact")
+@Table(name ="contacts")
 public class Contact {
 	@Id
 	@Column(name="id", length =5)

@@ -22,6 +22,11 @@
 			<mapping class="com.mphasis.firsthibernateapp.model.Comment"/>
 				<mapping class="com.mphasis.firsthibernateapp.model.Student"/>
 					<mapping class="com.mphasis.firsthibernateapp.model.Course"/>
+				<mapping class="com.mphasis.firsthibernateapp.model.TwoWheeler"/>
+				<mapping class="com.mphasis.firsthibernateapp.model.FourWheeler"/>
+				<mapping class="com.mphasis.firsthibernateapp.model.Vehicle"/>
+				
+					
 
 	</session-factory>
 </hibernate-configuration>

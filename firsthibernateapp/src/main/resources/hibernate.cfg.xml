@@ -18,6 +18,10 @@
 		<mapping class ="com.mphasis.firsthibernateapp.model.Employee" />
 			<mapping class ="com.mphasis.firsthibernateapp.model.Department" />
 			<mapping class="com.mphasis.firsthibernateapp.model.BankAccount"/>
+			<mapping class="com.mphasis.firsthibernateapp.model.BlogPost"/>
+			<mapping class="com.mphasis.firsthibernateapp.model.Comment"/>
+				<mapping class="com.mphasis.firsthibernateapp.model.Student"/>
+					<mapping class="com.mphasis.firsthibernateapp.model.Course"/>
 
 	</session-factory>
 </hibernate-configuration>

@@ -6,59 +6,39 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 @Entity
-@Table(name = "contacts")
-public class Contact {
+@Table(name="departments")
+public class Department {
 	@Id
-	@Column(name = "id", length = 5)
+	@Column(name = "id", length = 10)
 	private String id;
-
-	@Column(name = "name", length = 10)
+	@Column(name = "name", length = 20)
 	private String name;
-	@Column(name = "email", length = 15)
-	private String email;
-
-	public Contact() {
-
+	public Department() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
-	public Contact(String id, String name, String email) {
+	public Department(String id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.email = email;
 	}
-
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -67,9 +47,8 @@ public class Contact {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Contact other = (Contact) obj;
+		Department other = (Department) obj;
 		return Objects.equals(id, other.id);
-
 	}
-
+	
 }

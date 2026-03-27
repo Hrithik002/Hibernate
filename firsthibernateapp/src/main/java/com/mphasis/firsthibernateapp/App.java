@@ -1,16 +1,19 @@
 package com.mphasis.firsthibernateapp;
 
-import org.hibernate.Session;
-
+import com.mphasis.firsthibernateapp.dao.ContactDAO;
 import com.mphasis.firsthibernateapp.model.Contact;
-import com.mphasis.firsthibernateapp.util.HibernateUtil;
-//import com.mysql.cj.x.protobuf.MysqlxCrud.Find;
 
 
 
 public class App {
     public static void main(String[] args) {
-     //save();
+    	ContactDAO contactDAO = new ContactDAO();
+    	Contact c = new Contact ("C1", "jai","jai@gmail.com");
+    	if(contactDAO.save(c))
+    		System.out.println(c.getId()+"Saved");
+    }
+}
+  /*   //save();
   //findById("c1");
     // del("C2");
     updateEmail("C1","jaiho@gmail.com");   
@@ -67,4 +70,4 @@ public class App {
     	session.close();
     	System.out.println("updated");
 }
-}
+} */

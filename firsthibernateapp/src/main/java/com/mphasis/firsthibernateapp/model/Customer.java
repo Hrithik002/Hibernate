@@ -2,32 +2,34 @@ package com.mphasis.firsthibernateapp.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 @Entity
-@Table(name = "contacts")
-public class Contact {
+@Table(name="customers")
+public class Customer {
 	@Id
-	@Column(name = "id", length = 5)
+	@Column(name = "id", length = 10)
 	private String id;
-
-	@Column(name = "name", length = 10)
+	
+	@Column(name = "name", length = 20)
 	private String name;
-	@Column(name = "email", length = 15)
-	private String email;
-
-	public Contact() {
-
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name="lockerid")
+	private Locker locker;
+	
+	public Customer() {
+		
 	}
 
-	public Contact(String id, String name, String email) {
+	public Customer(String id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.email = email;
 	}
 
 	public String getId() {
@@ -45,13 +47,13 @@ public class Contact {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getEmail() {
-		return email;
+ 
+	public Locker getLocker() {
+		return locker;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setLocker(Locker locker) {
+		this.locker = locker;
 	}
 
 	@Override
@@ -67,9 +69,10 @@ public class Contact {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Contact other = (Contact) obj;
+		Customer other = (Customer) obj;
 		return Objects.equals(id, other.id);
-
 	}
+	
+
 
 }

@@ -2,32 +2,28 @@ package com.mphasis.firsthibernateapp.model;
 
 import java.util.Objects;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 @Entity
-@Table(name = "contacts")
-public class Contact {
-	@Id
-	@Column(name = "id", length = 5)
+@Table(name ="users")
+public class User {
+@Id
 	private String id;
-
-	@Column(name = "name", length = 10)
 	private String name;
-	@Column(name = "email", length = 15)
-	private String email;
+	@Embedded
+	private Address address;
 
-	public Contact() {
-
+	public User() {
+			// TODO Auto-generated constructor stub
 	}
 
-	public Contact(String id, String name, String email) {
+	public User(String id, String name, Address address) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.email = email;
+		this.address = address;
 	}
 
 	public String getId() {
@@ -46,12 +42,12 @@ public class Contact {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override
@@ -67,9 +63,8 @@ public class Contact {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Contact other = (Contact) obj;
+		User other = (User) obj;
 		return Objects.equals(id, other.id);
-
 	}
 
 }

@@ -12,6 +12,12 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 	
 	<mapping class ="com.mphasis.firsthibernateapp.model.Contact" />
+	<mapping class ="com.mphasis.firsthibernateapp.model.User" />
+	<mapping class ="com.mphasis.firsthibernateapp.model.Customer" />
+	<mapping class ="com.mphasis.firsthibernateapp.model.Locker" />
+		<mapping class ="com.mphasis.firsthibernateapp.model.Employee" />
+			<mapping class ="com.mphasis.firsthibernateapp.model.Department" />
+			<mapping class="com.mphasis.firsthibernateapp.model.BankAccount"/>
 
 	</session-factory>
 </hibernate-configuration>

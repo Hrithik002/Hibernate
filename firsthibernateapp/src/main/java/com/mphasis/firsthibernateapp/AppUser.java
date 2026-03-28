@@ -11,7 +11,7 @@ public class AppUser {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		Address address = new Address("Kharadi bypass", "Pune", "411037");
-		User user = new User("U1", "Jerry", address);
+		User user = new User("U1", "Maggie", address);
 		session.persist(user);
 		session.getTransaction().commit();
 		session.close();
